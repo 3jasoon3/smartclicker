@@ -1,0 +1,3 @@
+[keys]
+start_button = s
+end_button = e

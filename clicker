@@ -1,0 +1,22 @@
+#!/usr/bin/env -S python -u
+from art import*
+from parser import parse
+from exceptions import*
+from events import get_event
+from main import listen,repeat
+
+
+if __name__=="__main__":
+    try:
+        print(get_event("parsing"))
+        keys = parse("config.txt")
+        print(get_event("success"))
+        try:
+            coordinates = listen(keys[0], keys[1])
+            if len(coordinates)==0:
+                raise EmptyList
+            repeat(coordinates)
+        except EmptyList:
+            print(get_event("empty_list"))    
+    except CantParseCfg:
+        print(get_event("cfg_error"))
