@@ -1,3 +1,4 @@
+
 [keys]
-start_button = s
-end_button = e
+start_button = q
+end_button = r

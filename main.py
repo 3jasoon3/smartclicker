@@ -1,4 +1,5 @@
 import mouse
+from collections import OrderedDict
 import keyboard
 from parser import parse
 from events import get_event
@@ -25,7 +26,7 @@ def listen(start_key, end_key)->set:
             
             
     except:  
-        return list(set(coordinates))
+        return list(OrderedDict.fromkeys(coordinates))
 
 
 

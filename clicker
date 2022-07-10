@@ -9,7 +9,7 @@ from main import listen,repeat
 if __name__=="__main__":
     try:
         print(get_event("parsing"))
-        keys = parse("config.txt")
+        keys = parse("path to cfg")
         print(get_event("success"))
         try:
             coordinates = listen(keys[0], keys[1])
